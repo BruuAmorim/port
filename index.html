@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bruna Amorim | Desenvolvedora</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <header class="header">
+        <nav class="nav container">
+            <a href="#" class="nav__logo"></a>
+            
+            <div class="nav__menu" id="nav-menu">
+                <ul class="nav__list">
+                    <li><a href="#home" class="nav__link active-link">Início</a></li>
+                    <li><a href="#about" class="nav__link">Sobre</a></li>
+                    <li><a href="#skills" class="nav__link">Skills</a></li>
+                    <li><a href="#projects" class="nav__link">Projetos</a></li>
+                    <li><a href="#contact" class="nav__link">Contato</a></li>
+                </ul>
+                <div class="nav__close" id="nav-close"><i class="fas fa-times"></i></div>
+            </div>
+
+            <div class="nav__toggle" id="nav-toggle"><i class="fas fa-bars"></i></div>
+        </nav>
+    </header>
+
+    <main class="main">
+        
+        <section class="home section" id="home">
+            <div class="container grid-layout">
+                <div class="home__content">
+                    <div class="badge">👋 Olá, bem-vindo(a)</div>
+                    <h1 class="home__title">Eu sou <span class="gradient-text">Bruna Amorim</span></h1>
+                    <h2 class="home__subtitle">Analista de Suporte & Desenvolvedora</h2>
+                    <p class="home__description">
+                        Transformando problemas complexos em soluções digitais elegantes. Focada em criar experiências web intuitivas e performáticas.
+                    </p>
+                    <div class="home__buttons">
+                        <a href="#contact" class="button button--primary">Contate-me</a>
+                        <a href="#projects" class="button button--outline">Ver Projetos</a>
+                    </div>
+                    
+                    <div class="home__social">
+                        <a href="https://github.com/BruuAmorim" target="_blank"><i class="fab fa-github"></i></a>
+                        <a href="https://www.linkedin.com/in/bruna-amorim-704052332/" target="_blank"><i class="fab fa-linkedin"></i></a>
+                    </div>
+                </div>
+
+                <div class="home__img-wrapper">
+                    <div class="blob-bg"></div>
+                    <img src="https://media.licdn.com/dms/image/v2/D4D03AQFliATi6xsByg/profile-displayphoto-crop_800_800/B4DZnBp2p3GwAI-/0/1759890599154?e=1767830400&v=beta&t=TTtvK9fwSg-4DTnzZgDDkq2bb95frMataDTJ1LVoNTE" alt="Bruna Amorim" class="home__img">
+                </div>
+            </div>
+        </section>
+
+        <section class="about section" id="about">
+            <div class="container">
+                <div class="glass-card">
+                    <div class="grid-layout">
+                        <div class="about__img-wrapper">
+                            <img src="https://i.pinimg.com/originals/18/e2/ad/18e2ad83b882cee8be192754e245bb9e.gif">
+                        </div>
+                        
+                        <div class="about__data">
+                            <h2 class="section__title">Sobre Mim</h2>
+                            <p class="about__text">
+                                Atualmente cursando <strong>Análise e Desenvolvimento de Sistemas</strong> e atuando como <strong>Analista de Suporte</strong>. Essa dupla jornada me permite ter uma visão 360º do software: desde o desenvolvimento até a experiência final do usuário.
+                            </p>
+                            <p class="about__text">
+                                Sou apaixonada por resolver bugs e criar interfaces que as pessoas amam usar. Para entregar soluções que realmente facilitem a vida do usuário, meu foco técnico atual abrange React e TypeScript, além de boas práticas de AWS, automação e pipelines.  <strong>AWS, React e TypeScript</strong>.
+                            </p>
+                            
+                            <div class="about__info grid">
+                                <div class="info-box">
+                                    <span class="info-number">1+</span>
+                                    <span class="info-label">Anos de Estudo</span>
+                                </div>
+                                <div class="info-box">
+                                    <span class="info-number">3+</span>
+                                    <span class="info-label">Projetos</span>
+                                </div>
+                                <div class="info-box">
+                                    <span class="info-number">100%</span>
+                                    <span class="info-label">Dedicada</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="skills section" id="skills">
+            <div class="container">
+                <h2 class="section__title center">Minhas Habilidades</h2>
+                <div class="skills__container grid">
+                    
+                    <div class="glass-card skills__card">
+                        <h3 class="skills__title"><i class="fas fa-code"></i> Frontend</h3>
+                        <div class="skills__list">
+                            <div class="skill-item">
+                                <div class="skill-info"><span>HTML5/CSS3</span> <span>85%</span></div>
+                                <div class="skill-bar"><span class="skill-fill" style="width: 85%"></span></div>
+                            </div>
+                            <div class="skill-item">
+                                <div class="skill-info"><span>JavaScript</span> <span>75%</span></div>
+                                <div class="skill-bar"><span class="skill-fill" style="width: 75%"></span></div>
+                            </div>
+                            <div class="skill-item">
+                                <div class="skill-info"><span>React</span> <span>55%</span></div>
+                                <div class="skill-bar"><span class="skill-fill" style="width: 55%"></span></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="glass-card skills__card">
+                        <h3 class="skills__title"><i class="fas fa-server"></i> Tools & Cloud</h3>
+                        <div class="skills__list">
+                            <div class="skill-item">
+                                <div class="skill-info"><span>Git/GitHub</span> <span>85%</span></div>
+                                <div class="skill-bar"><span class="skill-fill" style="width: 85%"></span></div>
+                            </div>
+                            <div class="skill-item">
+                                <div class="skill-info"><span>AWS / Cloud</span> <span>50%</span></div>
+                                <div class="skill-bar"><span class="skill-fill" style="width: 50%"></span></div>
+                            </div>
+                            <div class="skill-item">
+                                <div class="skill-info"><span>TypeScript</span> <span>60%</span></div>
+                                <div class="skill-bar"><span class="skill-fill" style="width: 60%"></span></div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <section class="projects section" id="projects">
+            <div class="container">
+                <h2 class="section__title center">Projetos em Destaque</h2>
+                <div class="glass-card project__card">
+                    <div class="grid-layout project__layout">
+                        <div class="project__img-box">
+                            <img src="https://i.pinimg.com/736x/10/43/3c/10433c98906331e048c4a9d7cff10e3a.jpg" 
+                                 alt="Interface do sistema Finance EvaCloudd mostrando dashboard e gráficos" 
+                                 class="project__img">
+                        </div>
+                        <div class="project__data">
+                            <h3 class="project__title">Finance EvaCloudd</h3>
+                            <p class="project__description">
+                                Sistema completo de gestão financeira pessoal. Permite controle de entradas, saídas, categorização de gastos e visualização de relatórios gráficos para uma melhor saúde financeira.
+                            </p>
+                            <div class="project__tags">
+                                <span>React</span>
+                                <span>Firebase</span>
+                                <span>CSS Modules</span>
+                                <span>Chart.js</span>
+                            </div>
+                            <a href="https://financeevacloudd.web.app/" target="_blank" class="button button--primary button--small">
+                                Ver Demo <i class="fas fa-external-link-alt" style="margin-left: 8px;"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="contact section" id="contact">
+            <div class="container">
+                <div class="glass-card contact__wrapper">
+                    <div class="grid-layout">
+                        <div class="contact__info">
+                            <h2 class="section__title">Vamos Conversar?</h2>
+                            <p class="contact__text">
+                                Estou aberta a novas oportunidades de estágio e projetos freelance. Mande um oi!
+                            </p>
+                            
+                            <div class="contact__item">
+                                <i class="fas fa-envelope"></i>
+                                <div>
+                                    <h3>Email</h3>
+                                    <span>bruna.cristina.amorim@gmail.com</span>
+                                </div>
+                            </div>
+                            
+                            <div class="contact__item">
+                                <i class="fab fa-linkedin"></i>
+                                <div>
+                                    <h3>LinkedIn</h3>
+                                    <span>https://www.linkedin.com/in/bruna-amorim-704052332/</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <form action="" class="contact__form">
+                            <div class="form-group">
+                                <label>Seu Nome</label>
+                                <input type="text" placeholder="Ex: João Silva" required>
+                            </div>
+                            <div class="form-group">
+                                <label>Seu Email</label>
+                                <input type="email" placeholder="Ex: joao@email.com" required>
+                            </div>
+                            <div class="form-group">
+                                <label>Mensagem</label>
+                                <textarea rows="4" placeholder="Escreva sua mensagem aqui..." required></textarea>
+                            </div>
+                            <button type="submit" class="button button--primary width-100">Enviar Mensagem</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="footer">
+        <div class="container footer__container">
+            <p>© 2025 Bruna Amorim. Feito com 💜 e café.</p>
+        </div>
+    </footer>
+
+    <script>
+        const navMenu = document.getElementById('nav-menu'),
+              navToggle = document.getElementById('nav-toggle'),
+              navClose = document.getElementById('nav-close')
+
+        if(navToggle){
+            navToggle.addEventListener('click', () =>{
+                navMenu.classList.add('show-menu')
+            })
+        }
+
+        if(navClose){
+            navClose.addEventListener('click', () =>{
+                navMenu.classList.remove('show-menu')
+            })
+        }
+        
+        // Fecha menu ao clicar em link
+        const navLink = document.querySelectorAll('.nav__link')
+        function linkAction(){
+            navMenu.classList.remove('show-menu')
+        }
+        navLink.forEach(n => n.addEventListener('click', linkAction))
+    </script>
+</body>
+</html>
