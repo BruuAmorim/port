@@ -1,93 +1,106 @@
-# 💼 Portfólio - Bruna Amorim
+# 💜 Portfólio - Bruna Amorim
 
-Portfólio pessoal desenvolvido com HTML5, CSS3 e JavaScript, apresentando projetos, habilidades e experiência profissional.
+Portfólio pessoal moderno desenvolvido com foco em design elegante e experiência do usuário. Apresenta projetos, habilidades técnicas e informações de contato de forma profissional e interativa.
 
-## 🚀 Características
+![Portfólio Preview](https://img.shields.io/badge/Status-Active-success)
+![HTML5](https://img.shields.io/badge/HTML5-E34F26?logo=html5&logoColor=white)
+![CSS3](https://img.shields.io/badge/CSS3-1572B6?logo=css3&logoColor=white)
+![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?logo=javascript&logoColor=black)
 
-- ✅ Design moderno e responsivo
-- ✅ Animações suaves com ScrollReveal
-- ✅ Navegação suave entre seções
-- ✅ Menu mobile responsivo
-- ✅ Seções: Início, Sobre, Habilidades, Projetos, Experiência e Contato
+## ✨ Sobre o Projeto
 
-## 📋 Tecnologias Utilizadas
+Este portfólio foi desenvolvido para apresentar de forma profissional minha trajetória como **Analista de Suporte & Desenvolvedora**, destacando projetos, habilidades técnicas e facilitando o contato com oportunidades de estágio e projetos freelance.
 
-- HTML5
-- CSS3
-- JavaScript (Vanilla)
-- [ScrollReveal](https://scrollrevealjs.org/) - Animações de scroll
-- [Font Awesome](https://fontawesome.com/) - Ícones
-- Google Fonts (Poppins)
+### 🎨 Características Principais
 
-## 🎨 Estrutura do Projeto
+- **Design Moderno**: Interface com efeito glassmorphism e tema escuro com acentos roxos
+- **Totalmente Responsivo**: Adaptável a todos os dispositivos (mobile, tablet, desktop)
+- **Animações Suaves**: Efeitos de entrada e flutuação para melhor experiência visual
+- **Navegação Intuitiva**: Menu fixo com scroll suave entre seções
+- **Performance Otimizada**: Código limpo e otimizado para carregamento rápido
+
+## 🚀 Tecnologias Utilizadas
+
+- **HTML5** - Estrutura semântica e acessível
+- **CSS3** - Estilização moderna com glassmorphism e animações
+- **JavaScript (Vanilla)** - Interatividade e funcionalidades
+- **Font Awesome 6.4.0** - Ícones profissionais
+- **Google Fonts (Outfit)** - Tipografia moderna
+
+## 📋 Estrutura do Projeto
 
 ```
-portfolio/
+port/
 ├── index.html          # Página principal
-├── styles.css          # Estilos CSS
-├── main.js             # JavaScript
-├── README.md           # Documentação
-├── .gitignore          # Arquivos ignorados pelo Git
-├── assets/             # Recursos (imagens, documentos)
-│   ├── foto-perfil.jpg # Foto de perfil (adicionar aqui)
-│   └── ...
-└── docs/               # Documentação adicional
+├── styles.css          # Estilos e animações
+├── main.js             # JavaScript (se aplicável)
+└── README.md           # Documentação
 ```
 
-## 📦 Como Usar
+## 🎯 Seções do Portfólio
 
-1. Clone ou baixe este repositório
-2. Abra o arquivo `index.html` em seu navegador
-3. Ou hospede em um servidor web local
+1. **Início** - Apresentação pessoal e links de redes sociais
+2. **Sobre** - Trajetória acadêmica e profissional
+3. **Skills** - Habilidades técnicas em Frontend e Tools & Cloud
+4. **Projetos** - Projetos em destaque com links para demonstração
+5. **Contato** - Formulário de contato e informações diretas
 
-## 🔧 Personalização
+## 🎨 Design e Estilo
 
-### Cores
-As cores podem ser alteradas através das variáveis CSS em `styles.css`:
-
-```css
-:root {
-    --hue-color: 250; /* Altere este valor para mudar a paleta de cores */
-    --first-color: hsl(var(--hue-color), 69%, 61%);
-    /* ... outras variáveis */
-}
-```
-
-### Conteúdo
-Edite o arquivo `index.html` para personalizar:
-- Informações pessoais
-- Projetos
-- Experiências
-- Habilidades
+O portfólio utiliza:
+- **Paleta de Cores**: Tema escuro (#0f172a) com acentos roxos (#a855f7)
+- **Glassmorphism**: Efeito de vidro fosco nos cards principais
+- **Animações**: 
+  - Fade in up na entrada dos elementos
+  - Flutuação suave contínua nos cards
+  - Efeitos hover interativos
+- **Tipografia**: Fonte Outfit para legibilidade e modernidade
 
 ## 📱 Responsividade
 
-O portfólio é totalmente responsivo e funciona bem em:
-- 📱 Dispositivos móveis
-- 📱 Tablets
-- 💻 Desktops
-- 🖥️ Telas grandes
+O design é totalmente responsivo e otimizado para:
+- 📱 Smartphones (320px+)
+- 📱 Tablets (768px+)
+- 💻 Desktops (1024px+)
+- 🖥️ Telas grandes (1440px+)
 
-## 🌐 Navegadores Suportados
+## 🌐 Como Visualizar
 
-- Chrome (últimas versões)
-- Firefox (últimas versões)
-- Safari (últimas versões)
-- Edge (últimas versões)
+1. Clone o repositório:
+```bash
+git clone https://github.com/BruuAmorim/port.git
+```
+
+2. Abra o arquivo `index.html` em seu navegador preferido
+
+3. Ou acesse diretamente através do GitHub Pages (se configurado)
+
+## 🔗 Links Importantes
+
+- **GitHub**: [@BruuAmorim](https://github.com/BruuAmorim)
+- **LinkedIn**: [Bruna Amorim](https://www.linkedin.com/in/bruna-amorim-704052332/)
+- **Email**: [bruna.cristina.amorim@gmail.com](mailto:bruna.cristina.amorim@gmail.com)
+
+## 👤 Sobre Mim
+
+**Bruna Amorim**  
+Analista de Suporte & Desenvolvedora
+
+- 🎓 Cursando **Análise e Desenvolvimento de Sistemas**
+- 💼 Atuando como **Analista de Suporte**
+- 🚀 Focada em **React**, **TypeScript** e **AWS**
+- 💜 Apaixonada por resolver problemas e criar interfaces incríveis
 
 ## 📄 Licença
 
 Este projeto é de uso pessoal. Sinta-se livre para usar como inspiração para seu próprio portfólio!
 
-## 👤 Autor
-
-**Bruna Amorim**
-- GitHub: [@BruuAmorim](https://github.com/BruuAmorim)
-- LinkedIn: [Bruna Cristina Amorim](https://www.linkedin.com/in/bruna-cristina-amorim)
-- Email: Bruna.cristina.amorim@gmail.com
-- Estudante de Análise e Desenvolvimento de Sistemas (2º semestre)
-- Analista de Suporte e Implantação
-
 ---
 
+<div align="center">
+
 ⭐ Se gostou do projeto, deixe uma estrela!
+
+Feito com 💜 e café
+
+</div>
