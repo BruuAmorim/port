@@ -54,12 +54,13 @@
                     <div class="home__social">
                         <a href="https://github.com/BruuAmorim" target="_blank"><i class="fab fa-github"></i></a>
                         <a href="https://www.linkedin.com/in/bruna-amorim-704052332/" target="_blank"><i class="fab fa-linkedin"></i></a>
+                        <a href="https://wa.me/5516991504633" target="_blank" title="Enviar mensagem no WhatsApp"><i class="fab fa-whatsapp"></i></a>
                     </div>
                 </div>
 
                 <div class="home__img-wrapper">
                     <div class="blob-bg"></div>
-                    <img src="https://media.licdn.com/dms/image/v2/D4D03AQFliATi6xsByg/profile-displayphoto-crop_800_800/B4DZnBp2p3GwAI-/0/1759890599154?e=1769644800&v=beta&t=aWHix57THYHDJfp1BXxP4_fIYkBPnV0LrhU1nQezHKk" alt="Bruna Amorim" class="home__img">
+                    <img src="fotoport.png" alt="Bruna Amorim" class="home__img">
                 </div>
             </div>
         </section>
@@ -173,6 +174,52 @@
                         </div>
                     </div>
                 </div>
+
+                <div class="glass-card project__card project__card--expandable" id="automation-card">
+                    <div class="grid-layout project__layout">
+                        <div class="project__img-box project__img-box--zoomable">
+                            <img src="n8n.png.png" 
+                                 alt="Workflow de automação n8n mostrando integração com WhatsApp e IA" 
+                                 class="project__img project__img--zoomable"
+                                 id="automation-img">
+                            <div class="project__zoom-overlay">
+                                <i class="fas fa-search-plus"></i>
+                                <span>Clique para ampliar</span>
+                            </div>
+                        </div>
+                        <div class="project__data">
+                            <h3 class="project__title">Sistema de Agendamento Inteligente com IA e n8n</h3>
+                            <p class="project__description">
+                                Este projeto é uma automação avançada de agendamento desenvolvida no n8n, que utiliza Inteligência Artificial para gerenciar o calendário de forma totalmente autônoma. O sistema atua como um assistente virtual no WhatsApp, interpretando mensagens, verificando disponibilidade e gerenciando compromissos sem necessidade de intervenção humana.
+                            </p>
+                            <div class="project__tags">
+                                <span>n8n</span>
+                                <span>WhatsApp API</span>
+                                <span>AI Agent</span>
+                                <span>Google Calendar</span>
+                                <span>Google Meet</span>
+                                <span>Google Sheets</span>
+                                <span>Webhooks</span>
+                            </div>
+                            <button class="button button--primary button--small" id="toggle-details-btn">
+                                Ver Detalhes <i class="fas fa-chevron-down" id="chevron-icon" style="margin-left: 8px; transition: transform 0.3s;"></i>
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <div class="project__details" id="project-details">
+                        <div class="project__details-content">
+                            <h4 class="project__details-title">Principais Funcionalidades:</h4>
+                            <ul class="project__details-list">
+                                <li><strong>Interação Natural:</strong> A IA identifica a intenção do cliente (agendar, reagendar ou cancelar) e coleta os dados necessários (data, horário e motivo) de forma conversacional.</li>
+                                <li><strong>Gestão Autônoma de Calendário:</strong> O sistema acessa o Google Calendar em tempo real para criar, mover ou excluir eventos automaticamente.</li>
+                                <li><strong>Validação Inteligente:</strong> Antes de confirmar, a automação verifica conflitos de horário, valida formatos de data e previne duplicidade de agendamentos.</li>
+                                <li><strong>Integração com Google Meet:</strong> Para reuniões online, o fluxo cria automaticamente o link da videochamada e envia os dados de acesso diretamente para o cliente no WhatsApp.</li>
+                                <li><strong>Organização de Dados:</strong> Todos os registros e históricos são salvos automaticamente em uma Google Sheets para controle administrativo.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
             </div>
         </section>
 
@@ -225,6 +272,17 @@
 
     </main>
 
+    <!-- Modal para zoom da imagem -->
+    <div class="image-modal" id="image-modal">
+        <div class="image-modal__overlay"></div>
+        <div class="image-modal__content">
+            <button class="image-modal__close" id="close-modal">
+                <i class="fas fa-times"></i>
+            </button>
+            <img src="" alt="Imagem ampliada" class="image-modal__img" id="modal-img">
+        </div>
+    </div>
+
     <footer class="footer">
         <div class="container footer__container">
             <p>© 2025 Bruna Amorim. Feito com 💜 e café.</p>
@@ -254,6 +312,81 @@
             navMenu.classList.remove('show-menu')
         }
         navLink.forEach(n => n.addEventListener('click', linkAction))
+
+        // Expansão do card de automação
+        const toggleBtn = document.getElementById('toggle-details-btn')
+        const projectDetails = document.getElementById('project-details')
+        const automationCard = document.getElementById('automation-card')
+        const chevronIcon = document.getElementById('chevron-icon')
+
+        if(toggleBtn && projectDetails && automationCard) {
+            toggleBtn.addEventListener('click', () => {
+                const isExpanded = automationCard.classList.contains('expanded')
+                
+                if(isExpanded) {
+                    automationCard.classList.remove('expanded')
+                    chevronIcon.style.transform = 'rotate(0deg)'
+                } else {
+                    automationCard.classList.add('expanded')
+                    chevronIcon.style.transform = 'rotate(180deg)'
+                }
+            })
+        }
+
+        // Modal de zoom da imagem
+        const automationImg = document.getElementById('automation-img')
+        const imageModal = document.getElementById('image-modal')
+        const modalImg = document.getElementById('modal-img')
+        const closeModal = document.getElementById('close-modal')
+        const modalOverlay = document.querySelector('.image-modal__overlay')
+        const zoomOverlay = document.querySelector('.project__zoom-overlay')
+        const imgBox = document.querySelector('.project__img-box--zoomable')
+
+        const openModal = () => {
+            if(automationImg && modalImg && imageModal) {
+                modalImg.src = automationImg.src
+                imageModal.classList.add('active')
+                document.body.style.overflow = 'hidden'
+            }
+        }
+
+        if(automationImg && imageModal && modalImg) {
+            // Abrir modal ao clicar na imagem ou no overlay
+            automationImg.addEventListener('click', openModal)
+            
+            if(zoomOverlay) {
+                zoomOverlay.addEventListener('click', openModal)
+            }
+            
+            if(imgBox) {
+                imgBox.addEventListener('click', (e) => {
+                    if(e.target === imgBox) {
+                        openModal()
+                    }
+                })
+            }
+
+            // Fechar modal
+            const closeModalFunc = () => {
+                imageModal.classList.remove('active')
+                document.body.style.overflow = ''
+            }
+
+            if(closeModal) {
+                closeModal.addEventListener('click', closeModalFunc)
+            }
+
+            if(modalOverlay) {
+                modalOverlay.addEventListener('click', closeModalFunc)
+            }
+
+            // Fechar com ESC
+            document.addEventListener('keydown', (e) => {
+                if(e.key === 'Escape' && imageModal.classList.contains('active')) {
+                    closeModalFunc()
+                }
+            })
+        }
     </script>
 </body>
 </html>
