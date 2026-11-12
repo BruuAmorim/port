@@ -11,6 +11,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&display=swap" rel="stylesheet">
     
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css">
     
     <link rel="stylesheet" href="styles.css">
 </head>
@@ -38,13 +39,22 @@
     <main class="main">
         
         <section class="home section" id="home">
+            <div class="home__bg" aria-hidden="true">
+                <div class="home__orb home__orb--a"></div>
+                <div class="home__orb home__orb--b"></div>
+                <div class="home__grid"></div>
+                <canvas id="hero-particles"></canvas>
+            </div>
             <div class="container grid-layout">
                 <div class="home__content">
                     <div class="badge">👋 Olá, bem-vindo(a)</div>
-                    <h1 class="home__title">Eu sou <span class="gradient-text">Bruna Amorim</span></h1>
-                    <h2 class="home__subtitle">Analista de Suporte & Desenvolvedora</h2>
+                    <h1 class="home__title">Olá, sou <span class="gradient-text">Bruna Amorim</span>.</h1>
+                    <p class="home__typing">
+                        <span class="sr-only">Desenvolvedora focada em Sistemas com IA, Experiências Interativas e Soluções Web.</span>
+                        <span aria-hidden="true">Desenvolvedora focada em <span id="typing-text" class="gradient-text"></span><span class="typing__caret"></span></span>
+                    </p>
                     <p class="home__description">
-                        Transformando problemas complexos em soluções digitais elegantes. Focada em criar experiências web intuitivas e performáticas.
+                        Analista de Suporte em formação full stack. Conecto sistemas, automações e interfaces para transformar problemas em experiências web claras.
                     </p>
                     <div class="home__buttons">
                         <a href="#contact" class="button button--primary">Contate-me</a>
@@ -52,15 +62,20 @@
                     </div>
                     
                     <div class="home__social">
-                        <a href="https://github.com/BruuAmorim" target="_blank"><i class="fab fa-github"></i></a>
-                        <a href="https://www.linkedin.com/in/bruna-amorim-704052332/" target="_blank"><i class="fab fa-linkedin"></i></a>
-                        <a href="https://wa.me/5516991504633" target="_blank" title="Enviar mensagem no WhatsApp"><i class="fab fa-whatsapp"></i></a>
+                        <a href="https://github.com/BruuAmorim" target="_blank" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                        <a href="https://www.linkedin.com/in/bruna-amorim-704052332/" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                        <a href="https://wa.me/5516991504633" target="_blank" title="Enviar mensagem no WhatsApp" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
                     </div>
                 </div>
 
                 <div class="home__img-wrapper">
-                    <div class="blob-bg"></div>
-                    <img src="foto.png" alt="Bruna Amorim" class="home__img">
+                    <div class="avatar" id="avatar">
+                        <div class="avatar__stage">
+                            <div class="avatar__glow-ring" aria-hidden="true"></div>
+                            <div class="avatar__ring" aria-hidden="true"></div>
+                            <img src="foto.png" alt="Foto de Bruna Amorim" class="avatar__img" width="320" height="320">
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>
@@ -104,45 +119,147 @@
 
         <section class="skills section" id="skills">
             <div class="container">
-                <h2 class="section__title center">Minhas Habilidades</h2>
-                <div class="skills__container grid">
-                    
-                    <div class="glass-card skills__card">
-                        <h3 class="skills__title"><i class="fas fa-code"></i> Frontend</h3>
-                        <div class="skills__list">
-                            <div class="skill-item">
-                                <div class="skill-info"><span>HTML5/CSS3</span> <span>85%</span></div>
-                                <div class="skill-bar"><span class="skill-fill" style="width: 85%"></span></div>
-                            </div>
-                            <div class="skill-item">
-                                <div class="skill-info"><span>JavaScript</span> <span>75%</span></div>
-                                <div class="skill-bar"><span class="skill-fill" style="width: 75%"></span></div>
-                            </div>
-                            <div class="skill-item">
-                                <div class="skill-info"><span>React</span> <span>55%</span></div>
-                                <div class="skill-bar"><span class="skill-fill" style="width: 55%"></span></div>
-                            </div>
-                        </div>
-                    </div>
+                <h2 class="section__title center">Habilidades</h2>
+                <p class="skills__intro">Tecnologias do LinkedIn e dos projetos, junto com as competências de suporte, integração e atendimento.</p>
+                <div class="skills__tabs" role="tablist" aria-label="Categorias de habilidades">
+                    <button class="skills__tab" role="tab" id="tab-frontend" aria-selected="true" aria-controls="skills-grid" data-cat="frontend" type="button">Frontend</button>
+                    <button class="skills__tab" role="tab" id="tab-backend" aria-selected="false" aria-controls="skills-grid" data-cat="backend" tabindex="-1" type="button">Backend</button>
+                    <button class="skills__tab" role="tab" id="tab-tools" aria-selected="false" aria-controls="skills-grid" data-cat="tools" tabindex="-1" type="button">Ferramentas</button>
+                    <button class="skills__tab" role="tab" id="tab-ai" aria-selected="false" aria-controls="skills-grid" data-cat="ai" tabindex="-1" type="button">IA</button>
+                    <button class="skills__tab" role="tab" id="tab-soft" aria-selected="false" aria-controls="skills-grid" data-cat="soft" tabindex="-1" type="button">Soft skills</button>
+                </div>
+                <div class="skills__grid" id="skills-grid" role="tabpanel" aria-labelledby="tab-frontend">
+                    <article class="skill-card" data-cat="frontend">
+                        <span class="skill-card__border" aria-hidden="true"></span>
+                        <span class="skill-card__icon"><i class="devicon-html5-plain colored"></i></span>
+                        <span class="skill-card__name">HTML5</span>
+                    </article>
+                    <article class="skill-card" data-cat="frontend">
+                        <span class="skill-card__border" aria-hidden="true"></span>
+                        <span class="skill-card__icon"><i class="devicon-css3-plain colored"></i></span>
+                        <span class="skill-card__name">CSS3</span>
+                    </article>
+                    <article class="skill-card" data-cat="frontend">
+                        <span class="skill-card__border" aria-hidden="true"></span>
+                        <span class="skill-card__icon"><i class="devicon-javascript-plain colored"></i></span>
+                        <span class="skill-card__name">JavaScript</span>
+                    </article>
+                    <article class="skill-card" data-cat="frontend">
+                        <span class="skill-card__border" aria-hidden="true"></span>
+                        <span class="skill-card__icon"><i class="devicon-react-original colored"></i></span>
+                        <span class="skill-card__name">React</span>
+                    </article>
+                    <article class="skill-card" data-cat="frontend">
+                        <span class="skill-card__border" aria-hidden="true"></span>
+                        <span class="skill-card__icon"><i class="devicon-typescript-plain colored"></i></span>
+                        <span class="skill-card__name">TypeScript</span>
+                    </article>
 
-                    <div class="glass-card skills__card">
-                        <h3 class="skills__title"><i class="fas fa-server"></i> Tools & Cloud</h3>
-                        <div class="skills__list">
-                            <div class="skill-item">
-                                <div class="skill-info"><span>Git/GitHub</span> <span>85%</span></div>
-                                <div class="skill-bar"><span class="skill-fill" style="width: 85%"></span></div>
-                            </div>
-                            <div class="skill-item">
-                                <div class="skill-info"><span>AWS / Cloud</span> <span>50%</span></div>
-                                <div class="skill-bar"><span class="skill-fill" style="width: 50%"></span></div>
-                            </div>
-                            <div class="skill-item">
-                                <div class="skill-info"><span>TypeScript</span> <span>60%</span></div>
-                                <div class="skill-bar"><span class="skill-fill" style="width: 60%"></span></div>
-                            </div>
-                        </div>
-                    </div>
+                    <article class="skill-card" data-cat="backend" hidden>
+                        <span class="skill-card__border" aria-hidden="true"></span>
+                        <span class="skill-card__icon"><i class="devicon-nodejs-plain colored"></i></span>
+                        <span class="skill-card__name">Node.js</span>
+                    </article>
+                    <article class="skill-card" data-cat="backend" hidden>
+                        <span class="skill-card__border" aria-hidden="true"></span>
+                        <span class="skill-card__icon"><i class="fas fa-plug"></i></span>
+                        <span class="skill-card__name">APIs</span>
+                    </article>
+                    <article class="skill-card" data-cat="backend" hidden>
+                        <span class="skill-card__border" aria-hidden="true"></span>
+                        <span class="skill-card__icon"><i class="devicon-firebase-plain colored"></i></span>
+                        <span class="skill-card__name">Firebase</span>
+                    </article>
+                    <article class="skill-card" data-cat="backend" hidden>
+                        <span class="skill-card__border" aria-hidden="true"></span>
+                        <span class="skill-card__icon"><i class="fas fa-bolt"></i></span>
+                        <span class="skill-card__name">Webhooks</span>
+                    </article>
 
+                    <article class="skill-card" data-cat="tools" hidden>
+                        <span class="skill-card__border" aria-hidden="true"></span>
+                        <span class="skill-card__icon skill-card__icon--n8n">
+                            <svg class="skill-card__svg" viewBox="0 0 24 24" aria-hidden="true">
+                                <circle cx="5.5" cy="12" r="2.1"></circle>
+                                <circle cx="18.5" cy="6" r="2.1"></circle>
+                                <circle cx="18.5" cy="18" r="2.1"></circle>
+                                <path d="M7.6 12h6.2M16.6 7.5 9.2 11.2M16.6 16.5 9.2 12.8"></path>
+                            </svg>
+                        </span>
+                        <span class="skill-card__name">n8n</span>
+                    </article>
+                    <article class="skill-card" data-cat="tools" hidden>
+                        <span class="skill-card__border" aria-hidden="true"></span>
+                        <span class="skill-card__icon"><i class="devicon-git-plain colored"></i></span>
+                        <span class="skill-card__name">Git</span>
+                    </article>
+                    <article class="skill-card" data-cat="tools" hidden>
+                        <span class="skill-card__border" aria-hidden="true"></span>
+                        <span class="skill-card__icon"><i class="devicon-github-original"></i></span>
+                        <span class="skill-card__name">GitHub</span>
+                    </article>
+                    <article class="skill-card" data-cat="tools" hidden>
+                        <span class="skill-card__border" aria-hidden="true"></span>
+                        <span class="skill-card__icon"><i class="fab fa-aws"></i></span>
+                        <span class="skill-card__name">AWS</span>
+                    </article>
+                    <article class="skill-card" data-cat="tools" hidden>
+                        <span class="skill-card__border" aria-hidden="true"></span>
+                        <span class="skill-card__icon"><i class="fas fa-table"></i></span>
+                        <span class="skill-card__name">Google Sheets</span>
+                    </article>
+                    <article class="skill-card" data-cat="tools" hidden>
+                        <span class="skill-card__border" aria-hidden="true"></span>
+                        <span class="skill-card__icon"><i class="fab fa-whatsapp"></i></span>
+                        <span class="skill-card__name">WhatsApp</span>
+                    </article>
+
+                    <article class="skill-card" data-cat="ai" hidden>
+                        <span class="skill-card__border" aria-hidden="true"></span>
+                        <span class="skill-card__icon"><i class="fas fa-robot"></i></span>
+                        <span class="skill-card__name">Agentes de IA</span>
+                    </article>
+                    <article class="skill-card" data-cat="ai" hidden>
+                        <span class="skill-card__border" aria-hidden="true"></span>
+                        <span class="skill-card__icon"><i class="fas fa-wand-magic-sparkles"></i></span>
+                        <span class="skill-card__name">Automação com IA</span>
+                    </article>
+                    <article class="skill-card" data-cat="ai" hidden>
+                        <span class="skill-card__border" aria-hidden="true"></span>
+                        <span class="skill-card__icon"><i class="fas fa-comments"></i></span>
+                        <span class="skill-card__name">Fluxos conversacionais</span>
+                    </article>
+
+                    <article class="skill-card" data-cat="soft" hidden>
+                        <span class="skill-card__border" aria-hidden="true"></span>
+                        <span class="skill-card__icon"><i class="fas fa-headset"></i></span>
+                        <span class="skill-card__name">Atendimento</span>
+                    </article>
+                    <article class="skill-card" data-cat="soft" hidden>
+                        <span class="skill-card__border" aria-hidden="true"></span>
+                        <span class="skill-card__icon"><i class="fas fa-stethoscope"></i></span>
+                        <span class="skill-card__name">Diagnóstico</span>
+                    </article>
+                    <article class="skill-card" data-cat="soft" hidden>
+                        <span class="skill-card__border" aria-hidden="true"></span>
+                        <span class="skill-card__icon"><i class="fas fa-comments"></i></span>
+                        <span class="skill-card__name">Comunicação</span>
+                    </article>
+                    <article class="skill-card" data-cat="soft" hidden>
+                        <span class="skill-card__border" aria-hidden="true"></span>
+                        <span class="skill-card__icon"><i class="fas fa-chart-line"></i></span>
+                        <span class="skill-card__name">Análise</span>
+                    </article>
+                    <article class="skill-card" data-cat="soft" hidden>
+                        <span class="skill-card__border" aria-hidden="true"></span>
+                        <span class="skill-card__icon"><i class="fas fa-gears"></i></span>
+                        <span class="skill-card__name">Processos</span>
+                    </article>
+                    <article class="skill-card" data-cat="soft" hidden>
+                        <span class="skill-card__border" aria-hidden="true"></span>
+                        <span class="skill-card__icon"><i class="fas fa-people-group"></i></span>
+                        <span class="skill-card__name">Colaboração</span>
+                    </article>
                 </div>
             </div>
         </section>
@@ -150,6 +267,47 @@
         <section class="projects section" id="projects">
             <div class="container">
                 <h2 class="section__title center">Projetos em Destaque</h2>
+                <div class="glass-card project__card">
+                    <div class="grid-layout project__layout">
+                        <div class="project__gallery" data-gallery>
+                            <img class="project__gallery-main"
+                                 src="gestao-ia-agentes.png"
+                                 alt="Painel Meus Agentes, com Eloah, Gabriel e Myrella ativos">
+                            <div class="project__thumbs" role="group" aria-label="Telas do Gestão de IA">
+                                <button type="button" class="project__thumb" aria-pressed="true"
+                                        data-src="gestao-ia-agentes.png"
+                                        data-alt="Painel Meus Agentes, com Eloah, Gabriel e Myrella ativos">
+                                    <img src="gestao-ia-agentes.png" alt="">
+                                </button>
+                                <button type="button" class="project__thumb" aria-pressed="false"
+                                        data-src="gestao-ia-canais.png"
+                                        data-alt="Modal para conectar um canal de WhatsApp por QR Code ou API oficial">
+                                    <img src="gestao-ia-canais.png" alt="">
+                                </button>
+                                <button type="button" class="project__thumb" aria-pressed="false"
+                                        data-src="gestao-ia-whatsapp.png"
+                                        data-alt="Lista de canais: WhatsApp, webchat, Telegram, Instagram e e-mail">
+                                    <img src="gestao-ia-whatsapp.png" alt="">
+                                </button>
+                            </div>
+                        </div>
+                        <div class="project__data">
+                            <h3 class="project__title">Gestão de IA</h3>
+                            <p class="project__description">
+                                Painel para criar e acompanhar agentes de IA por função, como recepção, comercial e suporte, e conectá-los aos canais de atendimento. A conexão de WhatsApp pode ser feita por QR Code ou pela API oficial, e o mesmo fluxo cobre webchat, Telegram, Instagram e e-mail.
+                            </p>
+                            <div class="project__tags">
+                                <span>Agentes de IA</span>
+                                <span>WhatsApp</span>
+                                <span>Webchat</span>
+                                <span>Telegram</span>
+                                <span>Instagram</span>
+                                <span>E-mail</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
                 <div class="glass-card project__card">
                     <div class="grid-layout project__layout">
                         <div class="project__img-box">
@@ -289,6 +447,7 @@
         </div>
     </footer>
 
+    <script src="interactions.js"></script>
     <script>
         const navMenu = document.getElementById('nav-menu'),
               navToggle = document.getElementById('nav-toggle'),
